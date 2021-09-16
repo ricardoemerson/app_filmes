@@ -3,6 +3,7 @@ import 'package:firebase_remote_config/firebase_remote_config.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import 'app/core/bindings/application_bindings.dart';
 import 'app/routes/app_pages.dart';
 
 Future<void> main() async {
@@ -18,6 +19,7 @@ Future<void> main() async {
     GetMaterialApp(
       title: 'Application',
       debugShowCheckedModeBanner: false,
+      initialBinding: ApplicationBindings(),
       initialRoute: AppPages.INITIAL,
       getPages: AppPages.routes,
     ),

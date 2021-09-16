@@ -1,0 +1,4 @@
+enum MessageType {
+  info,
+  error,
+}

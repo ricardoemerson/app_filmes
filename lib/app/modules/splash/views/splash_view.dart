@@ -17,7 +17,9 @@ class SplashView extends GetView<SplashController> {
               fit: BoxFit.cover,
             ),
           ),
-          child: Image.asset('assets/images/logo_filmes.png'),
+          child: Hero(
+              tag: 'logo-splash',
+              child: Image.asset('assets/images/logo_filmes.png')),
         ),
       ),
     );
