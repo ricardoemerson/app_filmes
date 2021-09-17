@@ -12,4 +12,7 @@ class LoginService implements ILoginService {
 
   @override
   Future<UserCredential> login() => _loginRepository.login();
+
+  @override
+  Future<void> logout() => _loginRepository.logout();
 }

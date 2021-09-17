@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import 'app/core/bindings/application_bindings.dart';
+import 'app/core/config/app_config.dart';
 import 'app/routes/app_pages.dart';
 
 Future<void> main() async {
@@ -17,7 +18,8 @@ Future<void> main() async {
 
   runApp(
     GetMaterialApp(
-      title: 'Application',
+      title: AppConfig.title,
+      theme: AppConfig.theme,
       debugShowCheckedModeBanner: false,
       initialBinding: ApplicationBindings(),
       initialRoute: AppPages.INITIAL,

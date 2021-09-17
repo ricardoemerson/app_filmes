@@ -1,5 +1,10 @@
 import 'package:get/get.dart';
 
+import 'package:app_filmes/app/modules/favorites/bindings/favorites_binding.dart';
+import 'package:app_filmes/app/modules/favorites/views/favorites_view.dart';
+import 'package:app_filmes/app/modules/movies/bindings/movies_binding.dart';
+import 'package:app_filmes/app/modules/movies/views/movies_view.dart';
+
 import '../modules/home/bindings/home_binding.dart';
 import '../modules/home/views/home_view.dart';
 import '../modules/login/bindings/login_binding.dart';
@@ -29,6 +34,16 @@ class AppPages {
       name: _Paths.LOGIN,
       page: () => LoginView(),
       binding: LoginBinding(),
+    ),
+    GetPage(
+      name: _Paths.MOVIES,
+      page: () => MoviesView(),
+      binding: MoviesBinding(),
+    ),
+    GetPage(
+      name: _Paths.FAVORITES,
+      page: () => FavoritesView(),
+      binding: FavoritesBinding(),
     ),
   ];
 }
