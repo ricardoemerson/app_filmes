@@ -1,12 +1,11 @@
 import 'package:get/get.dart';
 
-import 'package:app_filmes/app/modules/movie_detail/movie_detail_binding.dart';
-import 'package:app_filmes/app/modules/movie_detail/movie_detail_view.dart';
-
 import '../modules/home/home_binding.dart';
 import '../modules/home/home_view.dart';
 import '../modules/login/login_binding.dart';
 import '../modules/login/login_view.dart';
+import '../modules/movie_detail/movie_detail_binding.dart';
+import '../modules/movie_detail/movie_detail_view.dart';
 import '../modules/movies/movies_binding.dart';
 import '../modules/movies/movies_view.dart';
 import '../modules/splash/splash_binding.dart';
