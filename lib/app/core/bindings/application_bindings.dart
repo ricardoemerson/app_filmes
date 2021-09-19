@@ -32,9 +32,13 @@ class ApplicationBindings implements Bindings {
     Get.put(AuthService()).init();
 
     Get.lazyPut<IMoviesRepository>(
-        () => MoviesRepository(restClient: Get.find()));
+      () => MoviesRepository(restClient: Get.find()),
+      fenix: true,
+    );
 
     Get.lazyPut<IMoviesService>(
-        () => MoviesService(moviesRepository: Get.find()));
+      () => MoviesService(moviesRepository: Get.find()),
+      fenix: true,
+    );
   }
 }
