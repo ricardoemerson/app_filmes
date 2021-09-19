@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_remote_config/firebase_remote_config.dart';
 
 import './i_movies_repository.dart';
@@ -93,5 +94,46 @@ class MoviesRepository implements IMoviesRepository {
     }
 
     return response.body;
+  }
+
+  @override
+  Future<void> addOrRemoveFavorite(String userId, Movie movie) async {
+    try {
+      final favoriteCollection = FirebaseFirestore.instance
+          .collection('favorites')
+          .doc(userId)
+          .collection('movies');
+
+      if (movie.favorite) {
+        favoriteCollection.add(movie.toMap());
+      } else {
+        final favoriteData = await favoriteCollection
+            .where('id', isEqualTo: movie.id)
+            .limit(1)
+            .get();
+
+        await favoriteData.docs.first.reference.delete();
+      }
+    } catch (err) {
+      print('err: $err');
+      rethrow;
+    }
+  }
+
+  @override
+  Future<List<Movie>> getFavoritesMovies(String userId) async {
+    final favoritesMovies = await FirebaseFirestore.instance
+        .collection('favorites')
+        .doc(userId)
+        .collection('movies')
+        .get();
+
+    final listFavorites = <Movie>[];
+
+    for (var movie in favoritesMovies.docs) {
+      listFavorites.add(Movie.fromMap(movie.data()));
+    }
+
+    return listFavorites;
   }
 }

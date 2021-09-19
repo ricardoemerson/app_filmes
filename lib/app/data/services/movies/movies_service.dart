@@ -19,4 +19,12 @@ class MoviesService implements IMoviesService {
 
   @override
   Future<MovieDetail?> getDetail(int id) => _moviesRepository.getDetail(id);
+
+  @override
+  Future<void> addOrRemoveFavorite(String userId, Movie movie) =>
+      _moviesRepository.addOrRemoveFavorite(userId, movie);
+
+  @override
+  Future<List<Movie>> getFavoritesMovies(String userId) =>
+      _moviesRepository.getFavoritesMovies(userId);
 }

@@ -3,8 +3,9 @@ import 'package:get/get.dart';
 
 import '../../../core/ui/widgets/movie_card.dart';
 import '../../../data/models/movie.dart';
+import '../movies_controller.dart';
 
-class MoviesGroup extends StatelessWidget {
+class MoviesGroup extends GetView<MoviesController> {
   final String title;
   final List<Movie> movies;
 
@@ -37,8 +38,11 @@ class MoviesGroup extends StatelessWidget {
                 itemCount: movies.length,
                 physics: const BouncingScrollPhysics(),
                 itemBuilder: (context, index) {
+                  final movie = movies[index];
+
                   return MovieCard(
-                    movie: movies[index],
+                    movie: movie,
+                    favoriteCallback: () => controller.favoriteMovie(movie),
                   );
                 },
               );
