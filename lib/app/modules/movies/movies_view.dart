@@ -12,14 +12,16 @@ class MoviesView extends GetView<MoviesController> {
     return SizedBox(
       width: Get.width,
       child: ListView(
-        children: const [
-          MoviesHeader(),
-          MoviesFilter(),
+        children: [
+          const MoviesHeader(),
+          const MoviesFilter(),
           MoviesGroup(
             title: 'Mais populares',
+            movies: controller.popularMovies,
           ),
           MoviesGroup(
             title: 'Top Filmes',
+            movies: controller.topRatedMovies,
           ),
         ],
       ),

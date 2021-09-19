@@ -16,7 +16,8 @@ class MoviesBinding extends Bindings {
         () => GenresService(genresRepository: Get.find()));
 
     Get.lazyPut<MoviesController>(
-      () => MoviesController(genresService: Get.find()),
+      () => MoviesController(
+          genresService: Get.find(), moviesService: Get.find()),
     );
   }
 }

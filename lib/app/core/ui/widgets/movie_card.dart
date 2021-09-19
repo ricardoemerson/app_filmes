@@ -1,9 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 
+import '../../../data/models/movie.dart';
 import '../../config/app_filmes_icons_icons.dart';
 
 class MovieCard extends StatelessWidget {
-  const MovieCard({Key? key}) : super(key: key);
+  final dateFormat = DateFormat('y');
+  final Movie movie;
+
+  MovieCard({
+    Key? key,
+    required this.movie,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +31,7 @@ class MovieCard extends StatelessWidget {
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(20),
                     child: Image.network(
-                      'https://upload.wikimedia.org/wikipedia/pt/thumb/6/63/Joker_%282019%29.jpg/250px-Joker_%282019%29.jpg',
+                      movie.posterPath,
                       width: 148,
                       height: 184,
                       fit: BoxFit.cover,
@@ -31,18 +39,18 @@ class MovieCard extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(height: 20),
-                const Text(
-                  'Coringa',
+                Text(
+                  movie.title,
                   maxLines: 2,
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontSize: 12,
                     fontWeight: FontWeight.w600,
                     overflow: TextOverflow.ellipsis,
                   ),
                 ),
-                const Text(
-                  '2019',
-                  style: TextStyle(
+                Text(
+                  dateFormat.format(DateTime.parse(movie.releaseDate)),
+                  style: const TextStyle(
                     fontSize: 11,
                     fontWeight: FontWeight.w300,
                     color: Colors.grey,
@@ -52,7 +60,7 @@ class MovieCard extends StatelessWidget {
             ),
           ),
           Positioned(
-            bottom: 54,
+            bottom: 63,
             right: -7,
             child: Material(
               elevation: 5,
