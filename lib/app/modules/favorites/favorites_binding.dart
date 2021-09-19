@@ -6,7 +6,10 @@ class FavoritesBinding extends Bindings {
   @override
   void dependencies() {
     Get.lazyPut<FavoritesController>(
-      () => FavoritesController(),
+      () => FavoritesController(
+        moviesService: Get.find(),
+        authService: Get.find(),
+      ),
     );
   }
 }
