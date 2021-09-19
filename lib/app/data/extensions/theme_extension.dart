@@ -1,7 +1,7 @@
 import 'package:flutter/widgets.dart';
 
 extension ThemeExtension on BuildContext {
-  Color get themeRed => Color(0xffEA4335);
-  Color get themeOrange => Color(0xffFFBA49);
-  Color get themeGrey => Color(0xff9B9B9B);
+  Color get themeRed => const Color(0xffEA4335);
+  Color get themeOrange => const Color(0xffFFBA49);
+  Color get themeGrey => const Color(0xff9B9B9B);
 }

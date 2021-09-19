@@ -12,7 +12,7 @@ mixin MessagesMixin on GetxController {
           model.title,
           model.message,
           colorText: Colors.white,
-          duration: Duration(seconds: 5),
+          duration: const Duration(seconds: 5),
           backgroundColor: model.type.color(),
         );
       }

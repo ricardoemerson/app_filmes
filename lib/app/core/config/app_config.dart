@@ -7,7 +7,7 @@ class AppConfig {
   static ThemeData theme = ThemeData(
     fontFamily: 'Metropolis',
     scaffoldBackgroundColor: Colors.white,
-    appBarTheme: AppBarTheme(
+    appBarTheme: const AppBarTheme(
       backgroundColor: Colors.white,
       iconTheme: IconThemeData(color: Colors.black),
       elevation: 0,

@@ -1,16 +1,13 @@
 import 'package:get/get.dart';
 
-import 'package:app_filmes/app/modules/favorites/bindings/favorites_binding.dart';
-import 'package:app_filmes/app/modules/favorites/views/favorites_view.dart';
-import 'package:app_filmes/app/modules/movies/bindings/movies_binding.dart';
-import 'package:app_filmes/app/modules/movies/views/movies_view.dart';
-
-import '../modules/home/bindings/home_binding.dart';
-import '../modules/home/views/home_view.dart';
-import '../modules/login/bindings/login_binding.dart';
-import '../modules/login/views/login_view.dart';
-import '../modules/splash/bindings/splash_binding.dart';
-import '../modules/splash/views/splash_view.dart';
+import '../modules/home/home_binding.dart';
+import '../modules/home/home_view.dart';
+import '../modules/login/login_binding.dart';
+import '../modules/login/login_view.dart';
+import '../modules/movies/movies_binding.dart';
+import '../modules/movies/movies_view.dart';
+import '../modules/splash/splash_binding.dart';
+import '../modules/splash/splash_view.dart';
 
 part 'app_routes.dart';
 
@@ -39,11 +36,6 @@ class AppPages {
       name: _Paths.MOVIES,
       page: () => MoviesView(),
       binding: MoviesBinding(),
-    ),
-    GetPage(
-      name: _Paths.FAVORITES,
-      page: () => FavoritesView(),
-      binding: FavoritesBinding(),
     ),
   ];
 }

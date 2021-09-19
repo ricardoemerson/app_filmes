@@ -39,3 +39,6 @@ flutter:
         - asset: assets/fonts/metropolis/Metropolis-SemiBold.otf
           weight: 600
         - asset: assets/fonts/metropolis/Metropolis-Bold.otf
+
+get_cli:
+  sub_folder: false
