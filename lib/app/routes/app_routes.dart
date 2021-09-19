@@ -9,6 +9,7 @@ abstract class Routes {
   static const LOGIN = _Paths.LOGIN;
   static const MOVIES = _Paths.MOVIES;
   static const FAVORITES = _Paths.FAVORITES;
+  static const MOVIE_DETAIL = _Paths.MOVIE_DETAIL;
 }
 
 abstract class _Paths {
@@ -17,4 +18,5 @@ abstract class _Paths {
   static const LOGIN = '/login';
   static const MOVIES = '/movies';
   static const FAVORITES = '/favorites';
+  static const MOVIE_DETAIL = '/movie-detail';
 }

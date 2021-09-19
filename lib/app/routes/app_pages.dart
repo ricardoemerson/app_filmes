@@ -1,5 +1,8 @@
 import 'package:get/get.dart';
 
+import 'package:app_filmes/app/modules/movie_detail/movie_detail_binding.dart';
+import 'package:app_filmes/app/modules/movie_detail/movie_detail_view.dart';
+
 import '../modules/home/home_binding.dart';
 import '../modules/home/home_view.dart';
 import '../modules/login/login_binding.dart';
@@ -36,6 +39,11 @@ class AppPages {
       name: _Paths.MOVIES,
       page: () => MoviesView(),
       binding: MoviesBinding(),
+    ),
+    GetPage(
+      name: _Paths.MOVIE_DETAIL,
+      page: () => MovieDetailView(),
+      binding: MovieDetailBinding(),
     ),
   ];
 }

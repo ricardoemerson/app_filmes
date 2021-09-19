@@ -2,6 +2,7 @@ import 'package:firebase_remote_config/firebase_remote_config.dart';
 
 import './i_movies_repository.dart';
 import '../../models/movie.dart';
+import '../../models/movie_detail.dart';
 import '../../services/api/rest_client.dart';
 
 class MoviesRepository implements IMoviesRepository {
@@ -69,5 +70,28 @@ class MoviesRepository implements IMoviesRepository {
     }
 
     return response.body ?? <Movie>[];
+  }
+
+  @override
+  Future<MovieDetail?> getDetail(int id) async {
+    final response = await _restClient.get<MovieDetail?>(
+      '/movie/$id',
+      query: {
+        'api_key': RemoteConfig.instance.getString('api_token'),
+        'language': 'pt-br',
+        'append_to_response': 'images,credits',
+        'include_image_language': 'en,pt-br',
+      },
+      decoder: (data) {
+        return MovieDetail.fromMap(data);
+      },
+    );
+
+    if (response.hasError) {
+      print('response.hasError: ${response.statusText}');
+      throw Exception('Erro ao buscar detalhes do filme.');
+    }
+
+    return response.body;
   }
 }

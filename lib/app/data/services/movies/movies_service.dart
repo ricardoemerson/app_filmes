@@ -1,5 +1,6 @@
 import './i_movies_service.dart';
 import '../../models/movie.dart';
+import '../../models/movie_detail.dart';
 import '../../repositories/movies/i_movies_repository.dart';
 
 class MoviesService implements IMoviesService {
@@ -15,4 +16,7 @@ class MoviesService implements IMoviesService {
 
   @override
   Future<List<Movie>> getTopRated() => _moviesRepository.getTopRated();
+
+  @override
+  Future<MovieDetail?> getDetail(int id) => _moviesRepository.getDetail(id);
 }
