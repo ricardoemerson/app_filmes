@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:transparent_image/transparent_image.dart';
 
 import '../../../data/models/movie_detail.dart';
 
@@ -23,7 +24,10 @@ class MovieDetailHeader extends StatelessWidget {
 
             return Padding(
               padding: const EdgeInsets.all(2),
-              child: Image.network(image),
+              child: FadeInImage.memoryNetwork(
+                placeholder: kTransparentImage,
+                image: image,
+              ),
             );
           },
         ),

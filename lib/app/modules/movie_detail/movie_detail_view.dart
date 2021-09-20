@@ -14,6 +14,7 @@ class MovieDetailView extends GetView<MovieDetailController> {
         centerTitle: true,
       ),
       body: SingleChildScrollView(
+        physics: const BouncingScrollPhysics(),
         child: Obx(() {
           return Column(
             crossAxisAlignment: CrossAxisAlignment.start,

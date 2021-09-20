@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
+import 'package:transparent_image/transparent_image.dart';
 
 import '../../../data/extensions/theme_extension.dart';
 import '../../../data/models/movie.dart';
@@ -36,10 +37,12 @@ class MovieCard extends StatelessWidget {
                     borderRadius: BorderRadius.circular(20),
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(20),
-                      child: Image.network(
-                        'https://image.tmdb.org/t/p/w200/${movie.posterPath}',
+                      child: FadeInImage.memoryNetwork(
                         width: 148,
                         height: 184,
+                        placeholder: kTransparentImage,
+                        image:
+                            'https://image.tmdb.org/t/p/w200/${movie.posterPath}',
                         fit: BoxFit.cover,
                       ),
                     ),
